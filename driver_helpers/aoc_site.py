@@ -30,6 +30,8 @@ def find_firefox_cookie_db_paths() -> list[Path]:
     if os.name == "nt":
         app_data_path = Path(os.environ["APPDATA"])
         firefox_profiles = app_data_path / "Mozilla" / "Firefox" / "Profiles"
+    elif os.name == "posix" and "linux" in os.sys.platform:
+        firefox_profiles = Path(os.environ["HOME"]) / ".mozilla" / "firefox"
     else:
         firefox_profiles = (
             Path(os.environ["HOME"])

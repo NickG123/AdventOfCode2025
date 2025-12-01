@@ -8,7 +8,7 @@ from cookiecutter.main import cookiecutter
 
 from driver_helpers.aoc_site import download_problem_input
 
-YEAR = 2024
+YEAR = 2025
 CURR_DAY = datetime.now().day
 
 
