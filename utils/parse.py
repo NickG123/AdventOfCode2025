@@ -10,9 +10,9 @@ def read_lines(file: TextIO) -> Iterator[str]:
         yield line.strip("\r\n")
 
 
-def read_number_list(file: TextIO) -> list[tuple[int, ...]]:
+def read_number_list(file: TextIO, sep: str | None = None) -> list[tuple[int, ...]]:
     """Read a list of numbers on each line of a file."""
-    return [tuple([int(val) for val in line.split()]) for line in read_lines(file)]
+    return [tuple([int(val) for val in line.split(sep)]) for line in read_lines(file)]
 
 
 def read_number_columns(file: TextIO) -> list[tuple[int, ...]]:
